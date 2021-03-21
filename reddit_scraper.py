@@ -15,11 +15,11 @@ reddit = praw.Reddit(
 headlines = set()
 for submission in reddit.subreddit('politics').hot(limit=None):
      print(submission.title)
-   # print(submission.id)
-   # print(submission.author)
-  # print(submission.score)
-  #  print(submission.upvote_ratio)
-    # break
+     print(submission.id)
+     print(submission.author)
+     print(submission.score)
+     print(submission.upvote_ratio)
+     #break
      headlines.add(submission.title)
 print(len(headlines))
 
@@ -52,6 +52,6 @@ pprint(list(df[df['label'] == -1].headline)[:5], width=200)
 fig, ax = plt.subplots(figsize=(8, 8))
 counts = df.label.value_counts(normalize=True) * 100
 sns.barplot(x=counts.index, y=counts, ax=ax)
-ax.set_xticklabels(['negative','neutrsl','positive'])
+ax.set_xticklabels(['negative','neutral','positive'])
 ax.set_ylabel('Percentage')
 plt.show()
